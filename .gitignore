@@ -1,3 +1,12 @@
+# Ignore Python virtual environments
+octofit-tracker/backend/venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+*.egg-info/
 .DS_Store
 
 # Virtual Environment
