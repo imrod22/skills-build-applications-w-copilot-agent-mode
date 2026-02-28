@@ -1,0 +1,613 @@
+/* ==================== Color Palette ==================== */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  --dark-color: #1f2937;
+  --light-color: #f9fafb;
+  --bg-color: #ecf0f1;
+}
+
+/* ==================== General Styles ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ecf0f1 0%, #f5f7fa 100%);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #2c3e50;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+}
+
+/* ==================== Navigation Bar ==================== */
+.navbar {
+  background: linear-gradient(90deg, #1f2937 0%, #111827 100%) !important;
+  border-bottom: 3px solid #667eea;
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+  color: #fff !important;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+  color: #667eea !important;
+}
+
+.navbar-brand img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.1);
+}
+
+.nav-link {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(102, 126, 234, 0.2);
+  color: #667eea !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.hero-section h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 0.8s ease-out;
+  font-weight: 800;
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  font-weight: 500;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-section .btn {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-section .btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.hero-section .btn-primary:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.hero-section .btn-outline-primary {
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-section .btn-outline-primary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: white;
+}
+
+/* Feature Icons */
+.feature-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  animation: fadeInRight 0.8s ease-out 0.2s both;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.feature-card h5 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==================== Cards ==================== */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  background-color: white;
+  border-top: 4px solid #667eea;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  border: none !important;
+  font-weight: 700;
+  padding: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.card-header.bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.card-header.bg-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  border: none !important;
+  padding: 1rem 1.5rem;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* ==================== Tables ==================== */
+.table-responsive {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.table {
+  background-color: white;
+  margin-bottom: 0;
+}
+
+.table thead {
+  border-bottom: none;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1.25rem;
+  border: none;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.table tbody td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+  color: #374151;
+}
+
+.table-dark {
+  background-color: #111827;
+}
+
+.table-warning {
+  background-color: #fef3c7 !important;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* ==================== Badges ==================== */
+.badge {
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.badge.bg-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.badge.bg-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: white;
+}
+
+.badge.bg-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+}
+
+.badge.bg-info {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+}
+
+/* ==================== Buttons ==================== */
+.btn {
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #63408b 100%);
+  color: white;
+}
+
+.btn-outline-primary {
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.btn-outline-primary:hover {
+  background-color: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.btn-outline-secondary {
+  border: 2px solid #6b7280;
+  color: #6b7280;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6b7280;
+  color: white;
+  border-color: #6b7280;
+}
+
+.btn-outline-success {
+  border: 2px solid #10b981;
+  color: #10b981;
+}
+
+.btn-outline-success:hover {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.btn-outline-danger {
+  border: 2px solid #ef4444;
+  color: #ef4444;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+/* ==================== Alerts ==================== */
+.alert {
+  border: none;
+  border-radius: 0.75rem;
+  border-left: 5px solid;
+  padding: 1.25rem;
+  animation: fadeInUp 0.3s ease-out;
+  font-weight: 500;
+}
+
+.alert-info {
+  border-left-color: #3b82f6;
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.alert-warning {
+  border-left-color: #f59e0b;
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.alert-danger {
+  border-left-color: #ef4444;
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.alert-success {
+  border-left-color: #10b981;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* ==================== Spinners ==================== */
+.spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.3em;
+  color: #667eea;
+}
+
+/* ==================== Headings ==================== */
+h1, h2, h3, h4, h5, h6 {
+  color: #111827;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ==================== Links ==================== */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* ==================== Footer ==================== */
+footer {
+  margin-top: auto;
+  background: linear-gradient(90deg, #1f2937 0%, #111827 100%);
+  border-top: 3px solid #667eea;
+  padding: 2.5rem 0;
+  color: #e5e7eb;
+}
+
+footer h6 {
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #9ca3af;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+footer .text-white-50 {
+  color: #9ca3af;
+}
+
+footer hr {
+  border-color: #374151;
+}
+
+/* ==================== Container ==================== */
+.container-fluid {
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .feature-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    margin: 0.25rem 0 !important;
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+  }
+}
+
